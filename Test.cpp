@@ -27,12 +27,12 @@ CHECK_NOTHROW(notebook_test.write(1,0,3,Direction::Vertical, ""));
 
 TEST_CASE("read"){
 Notebook notebook_test;
-CHECK(notebook_test.read(2,3,6,Direction::Horizontal, 0)== "_");
-CHECK(notebook_test.read(2,3,6,Direction::Horizontal, 1)== "a");
-CHECK(notebook_test.read(2,3,6,Direction::Horizontal, 2)=="__");
-CHECK(notebook_test.read(4,5,5,Direction::Horizontal, 2)=="_s");
-CHECK(notebook_test.read(7,7,6,Direction::Horizontal, 5)== "hello");
-CHECK(notebook_test.read(2,5,20,Direction::Horizontal,6)=="tal___");
+CHECK(notebook_test.read(2,3,6,Direction::Horizontal, 4)== "hiii");
+CHECK(notebook_test.read(2,3,6,Direction::Horizontal, 1)== "h");
+CHECK(notebook_test.read(2,3,6,Direction::Horizontal, 2)=="hii");
+CHECK(notebook_test.read(4,5,5,Direction::Horizontal, 2)=="aa");
+CHECK(notebook_test.read(7,7,6,Direction::Horizontal, 4)== "home");
+CHECK(notebook_test.read(13,7,9,Direction::Horizontal,5)=="sky__");
 
 }
 
@@ -44,7 +44,7 @@ CHECK(notebook_test.read(2,5,20,Direction::Horizontal,6)=="tal___");
 CHECK_THROWS(notebook_test.erase(2,5,20,Direction::Horizontal, 5));
 CHECK_THROWS(notebook_test.write(2,5,3,Direction::Vertical, "hiii"));
 CHECK_THROWS(notebook_test.erase(2,5,3,Direction::Horizontal, 7));
-CHECK_THROWS(notebook_test.erase(4,5,6,Direction::Horizontal, 8));
+CHECK_THROWS(notebook_test.erase(7,7,6,Direction::Horizontal, 4));
 CHECK_NOTHROW(notebook_test.erase(2,1,3,Direction::Horizontal, -1));
 CHECK_NOTHROW(notebook_test.erase(9,5,3,Direction::Horizontal, 0));
 }
