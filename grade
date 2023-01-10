@@ -34,6 +34,6 @@ printf "### Score $i: $grade\n"
 total=$((total + grade))
 
 total=$((total / i))
-printf "\n\nGrade: $total\n\n"
+printf "\n\nGrade:=>> $total\n\n"
 
 make -f Makefile --silent clean
